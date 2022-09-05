@@ -1,5 +1,5 @@
 {% set name = "eiquadprog" %}
-{% set version = "1.2.3" %}
+{% set version = "1.2.4" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/stack-of-tasks/{{ name }}/releases/download/v{{ version }}/{{ name }}-{{ version }}.tar.gz
-  sha256: a17f3715cf8e2ceb20e3a9d68d7bdd26e0910de05a9df96e9a1085915df3e850
+  sha256: 0cac7f91f4d279134a8c07c01717163e262ce87aa8edd6fc8f90d6ea29e3c6d0
 
 build:
   number: 0
