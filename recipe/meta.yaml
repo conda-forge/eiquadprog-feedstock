@@ -10,7 +10,7 @@ source:
   sha256: e4ac25a0236dd08f5d5f1890a33ca78a9c8a5808f7e34d0269d942fa9320036d
 
 build:
-  number: 0
+  number: 1
   skip: true  # [win]
   run_exports:
     - {{ pin_subpackage(name, max_pin='x.x') }}
@@ -22,10 +22,9 @@ requirements:
     - make  # [not win]
   host:
     - eigen
-    - boost-cpp
+    - libboost-devel
   run:
     - eigen
-    - {{ pin_compatible('boost-cpp', max_pin='x.x') }}
 test:
   requires:
     - pkg-config
