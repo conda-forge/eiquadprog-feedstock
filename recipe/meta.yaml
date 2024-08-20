@@ -30,7 +30,7 @@ test:
   requires:
     - pkg-config
   commands:
-    - pkg-config --modversion {{ name }}
+    - pkg-config --modversion {{ name }}  # [not osx or not arm64] 
 
 about:
   home: http://github.com/stack-of-tasks/eiquadprog
