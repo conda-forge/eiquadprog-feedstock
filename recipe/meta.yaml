@@ -11,16 +11,16 @@ source:
 
 build:
   number: 0
-  skip: true  # [win]
   run_exports:
     - {{ pin_subpackage(name, max_pin='x.x') }}
 
 requirements:
   build:
-    - {{ compiler('cxx') }}  # [not win]
-    - {{ stdlib("c") }}    # [not win]
+    - {{ compiler('cxx') }}
+    - {{ stdlib("c") }}
     - cmake
     - make  # [not win]
+    - ninja  # [win]
   host:
     - eigen
   run:
