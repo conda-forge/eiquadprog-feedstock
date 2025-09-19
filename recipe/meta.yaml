@@ -8,19 +8,21 @@ package:
 source:
   url: https://github.com/stack-of-tasks/{{ name }}/releases/download/v{{ version }}/{{ name }}-{{ version }}.tar.gz
   sha256: 41f317803933d42a2228b041e7f94d75fb4239449a2e291f404ab18c82622cd4
+  patches:
+    - win_support.patch
 
 build:
-  number: 0
-  skip: true  # [win]
+  number: 1
   run_exports:
     - {{ pin_subpackage(name, max_pin='x.x') }}
 
 requirements:
   build:
-    - {{ compiler('cxx') }}  # [not win]
-    - {{ stdlib("c") }}    # [not win]
+    - {{ compiler('cxx') }}
+    - {{ stdlib("c") }}
     - cmake
     - make  # [not win]
+    - ninja  # [win]
   host:
     - eigen
   run:
